@@ -18,9 +18,9 @@ makeCacheMatrix <- function(x) {
 #if it exists, it pulls the inverse from a cached variable instead of re-computing the inverse.
 cacheSolve <- function(x, ...) {
   i <- x$getInverse()
-  if(!is.null(m)) {
+  if(!is.null(i)) {
     message("getting cached data")
-    return(m)
+    return(i)
   }
   data <- x$get()
   i <- solve(data, ...)
